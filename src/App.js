@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
   const [isOn, setIson] = useState(false);
 
+
+  /*
+  Note :
+  Use Effect run affect after every render 
+  */ 
+  useEffect(() => {
+    document.title = `Youcliked ${count} times`
+  })
   const incrementCount = () =>{
     setCount(previousCount => previousCount + 1);
     console.log(setCount)
